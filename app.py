@@ -35,7 +35,7 @@ class ChatBot:
         response = self.client.chat.completions.create(
             model=self.model_name,
             messages=input_message_history,
-            temperature=0,
+            temperature=0.3,
         )
         ai_response = response.choices[0].message.content
         self.input_message_list.append({"role": "assistant", "content": ai_response})
