@@ -67,7 +67,7 @@ def chat_page():
     if "user_input" not in st.session_state:
         # st.session_state.user_input = "フレンドリーなやり取りを行って下さい"
         # st.session_state.user_input = "入力を「やさしい日本語」に変換して下さい。難しい単語、漢語は簡単なやまと言葉に変えて下さい"
-        st.session_state.user_input = "簡単な英文のシャドウイングを行います。ユーザーが「はじめて」と言ったら、簡単な英文を出してユーザーの言葉を聞いて下さい。「おわって」でシャドウイングを終わります"
+        st.session_state.user_input = "簡単な英文のシャドウイングを行います。ユーザーが「はじめて」と言ったら、簡単な英文を出してユーザーの言葉を聞いて下さい。ユーザーの言葉を聞いたらフィードバックを行い、次のシャドウイングの英文を出して下さい。「おわって」でシャドウイングを終わります"
 
     user_input = st.text_input("system promptを設定してください", value=st.session_state.user_input)
 
