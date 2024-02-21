@@ -1,5 +1,6 @@
 from openai import OpenAI
 import streamlit as st
+
 import os
 import time
 import base64
@@ -43,10 +44,10 @@ class ChatBot:
 def get_api_key_page():
     st.title("OpenAI API Key")
     st.write(
-        "To use this app, you need to provide your OpenAI API key. You can find your API key in the OpenAI dashboard."
+        "このアプリを使用するにはOpenAIのAPIキーを提供する必要があります。APIキーはOpenAIのダッシュボードで確認できます"
     )
     with st.form(key='my_form'):
-        api_key = st.text_input('Please Enter Your OpenAI Key below:', '')
+        api_key = st.text_input('OpenAIのAPIキーを以下に入れて下さい:', '')
         submit_button = st.form_submit_button(label='登録')
         if submit_button:
             st.session_state.api_key = api_key  # ユーザー入力をセッション状態に保存
@@ -103,7 +104,7 @@ def chat_page():
             # 応答音声を再生
             data = read_audio_file(output_audio_file)
             st.audio(data, format="audio/mp3")
-            # autoplay_audio(read_audio_file(output_audio_file))
+            # autoplay_audio(data)
 
             # transcript = client.audio.transcriptions.create(
             #     model="whisper-1",
@@ -138,7 +139,7 @@ def write_audio_file(file_path, audio_bytes):
 def autoplay_audio(data):
     if data:
         b64 = base64.b64encode(data).decode()
-        print(f"b64[0:10]: {b64[0:20]},{time.time()}")
+        # print(f"b64[0:10]: {b64[0:20]},{time.time()}")
         md = f"""
             <audio controls autoplay="true">
             <source src="data:audio/mp3;base64,{b64}" type="audio/mp3">
