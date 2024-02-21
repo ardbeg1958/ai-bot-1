@@ -103,7 +103,8 @@ def chat_page():
 
             # 応答音声を再生
             data = read_audio_file(output_audio_file)
-            st.audio(data, format="audio/mp3")
+            # st.audio(data, format="audio/mp3")
+            st.audio(data, format="audio/mpeg")
             # autoplay_audio(data)
 
             # transcript = client.audio.transcriptions.create(
