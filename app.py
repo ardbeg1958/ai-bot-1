@@ -58,8 +58,8 @@ def chat_page():
     # client
     client = st.session_state.client
     # 利用可能なモデルと音声のリスト
-    MODEL_NAMES = ["gpt-3.5-turbo-1106", "gpt-4-1106-preview", "gpt-4o"]
-    VOICES = ["alloy", "echo", "fable", "onyx", "nova", "shimmer"]
+    MODEL_NAMES = ["gpt-4o", "gpt-3.5-turbo-1106", "gpt-4-1106-preview"]
+    VOICES = ["nova", "alloy", "echo", "fable", "onyx", "shimmer"]
     # 音声ファイルのパス
     input_audio_file = "recorded_audio.wav"
     output_audio_file = "speech.mp3"
